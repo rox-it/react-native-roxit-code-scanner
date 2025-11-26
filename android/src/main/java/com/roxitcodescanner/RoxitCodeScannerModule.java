@@ -16,6 +16,7 @@ public class RoxitCodeScannerModule extends ReactContextBaseJavaModule {
     this.reactContext = reactContext;
     reactContext.registerReceiver(new ScannerReceiver(), new IntentFilter("com.xcheng.scanner.action.BARCODE_DECODING_BROADCAST"));
     reactContext.registerReceiver(new ScannerReceiver(), new IntentFilter("android.intent.ACTION_DECODE_DATA"));
+    reactContext.registerReceiver(new ScannerReceiver(), new IntentFilter("scan.rcv.message"));
     reactContext.registerReceiver(new ScannerReceiver(), new IntentFilter("barcode"));
   }
 

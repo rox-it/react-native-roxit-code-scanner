@@ -1,6 +1,6 @@
 {
   "name": "react-native-roxit-code-scanner",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Broadcast code scanner receiver",
   "main": "index.js",
   "scripts": {

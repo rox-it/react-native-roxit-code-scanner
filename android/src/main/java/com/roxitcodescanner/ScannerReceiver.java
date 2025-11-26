@@ -39,6 +39,12 @@ public class ScannerReceiver extends BroadcastReceiver {
                     .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                     .emit("barcode", intent.getStringExtra("barcode_string"));
             }
+            if (intent.getAction().equals("scan.rcv.message")) {
+                rnApp.getReactNativeHost().getReactInstanceManager()
+                    .getCurrentReactContext()
+                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                    .emit("barcode", intent.getStringExtra("barcodeData"));
+            }
             if (intent.getAction().equals("barcode")) {
                 rnApp.getReactNativeHost().getReactInstanceManager()
                     .getCurrentReactContext()

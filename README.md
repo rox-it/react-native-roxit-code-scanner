@@ -4,6 +4,7 @@ Broadcast code scanner receiver for intent actions:
 
 - com.xcheng.scanner.action.BARCODE_DECODING_BROADCAST
 - android.intent.ACTION_DECODE_DATA
+- scan.rcv.message
 - barcode
 
 ## Installation
