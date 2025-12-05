@@ -6,6 +6,7 @@ import android.util.Log;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.facebook.react.ReactInstanceManager;
@@ -24,10 +25,12 @@ public class ScannerReceiver extends BroadcastReceiver {
         if (intent != null) {
 //            Toast.makeText(context, intent.getAction(), 2000).show();
 //            Bundle bundle = new Bundle();
-                ReactApplication rnApp = (ReactApplication) context.getApplicationContext();
+            ReactApplication rnApp = (ReactApplication) context.getApplicationContext();
             if (intent.getAction().equals("com.xcheng.scanner.action.BARCODE_DECODING_BROADCAST")) {
 //                bundle.putString("barcode", intent.getStringExtra(Intent.EXTRA_TEXT));
 //                Toast.makeText(context, intent.getStringExtra("EXTRA_BARCODE_DECODING_DATA"), 2000).show();
+//                rnApp.getReactNativeHost().getReactInstanceManager()
+//                    .getCurrentReactContext()
                 rnApp.getReactNativeHost().getReactInstanceManager()
                     .getCurrentReactContext()
                     .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)

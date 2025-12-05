@@ -1,5 +1,5 @@
 /**
- * @providesModule AndroidWifiModule
+ * @providesModule RoxitCodeScannerModule
  */
 
 'use strict';
