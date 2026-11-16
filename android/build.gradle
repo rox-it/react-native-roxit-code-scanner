@@ -1,19 +1,18 @@
 apply plugin: 'com.android.library'
 
-def DEFAULT_COMPILE_SDK_VERSION = 27
-def DEFAULT_BUILD_TOOLS_VERSION = "27.0.3"
-def DEFAULT_MIN_SDK_VERSION = 16
-def DEFAULT_TARGET_SDK_VERSION = 27
+def DEFAULT_COMPILE_SDK_VERSION = 35
+def DEFAULT_BUILD_TOOLS_VERSION = "35.0.0"
+def DEFAULT_MIN_SDK_VERSION = 24
+def DEFAULT_TARGET_SDK_VERSION = 35
 
 android {
+    namespace 'com.roxitcodescanner'
     compileSdkVersion rootProject.hasProperty('compileSdkVersion') ? rootProject.compileSdkVersion : DEFAULT_COMPILE_SDK_VERSION
     buildToolsVersion rootProject.hasProperty('buildToolsVersion') ? rootProject.buildToolsVersion : DEFAULT_BUILD_TOOLS_VERSION
 
     defaultConfig {
         minSdkVersion rootProject.hasProperty('minSdkVersion') ? rootProject.minSdkVersion : DEFAULT_MIN_SDK_VERSION
         targetSdkVersion rootProject.hasProperty('targetSdkVersion') ? rootProject.targetSdkVersion : DEFAULT_TARGET_SDK_VERSION
-        versionCode 1
-        versionName "1.1"
     }
     lintOptions {
         abortOnError false
@@ -22,16 +21,12 @@ android {
 
 repositories {
     mavenLocal()
-    jcenter()
-    maven {
-        // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-        url "$projectDir/../../../node_modules/react-native/android"
-    }
+    mavenCentral()
+    google()
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'com.facebook.react:react-native:+'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.facebook.react:react-android'
     implementation fileTree( dir: "libs", includes: ['*.jar'] )
 }
-

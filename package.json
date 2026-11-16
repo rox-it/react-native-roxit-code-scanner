@@ -1,8 +1,13 @@
 {
   "name": "react-native-roxit-code-scanner",
-  "version": "1.0.25",
+  "version": "1.0.28",
   "description": "Broadcast code scanner receiver",
   "main": "index.js",
+  "files": [
+    "android/",
+    "index.js",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "test": "jest"
   },

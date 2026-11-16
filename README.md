@@ -6,6 +6,7 @@ Broadcast code scanner receiver for intent actions:
 - android.intent.ACTION_DECODE_DATA
 - scan.rcv.message
 - barcode
+- com.sunmi.scanner.ACTION_DATA_CODE_RECEIVED (extras `data` / `source_byte`)
 
 ## Installation
 
